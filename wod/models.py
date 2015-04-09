@@ -6,3 +6,4 @@ class Wod(models.Model):
     metcon = models.TextField()
     weightlifting = models.TextField()
     strength_accessory = models.TextField()
+    date = models.DateField()
