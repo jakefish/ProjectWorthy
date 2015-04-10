@@ -1,0 +1,10 @@
+{% if latest_wod_list %}
+  <ul>
+    {% for wod in latest_wod_list %}
+      <li><a href="/wod/{{ wod.id }}/">{{ wod.warm_up }}</a>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> No wods are available.</p>
+
+{% endif %}
