@@ -1,0 +1,12 @@
+syntax: glob
+*.pyc
+.DS_Store
+._*
+*.db
+*.log
+*.idea
+/static
+build/*
+settings.py
+/dev_static
+vagrant*
