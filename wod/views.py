@@ -10,7 +10,7 @@ def wod_index(request):
         'latest_wod_list': latest_wod_list,
     })
 
-    return render(request, "wod/index.html", context)
+    return render(request, "wod/wod_archive.html", context)
 
 def wod_details(request, wod_id):
     response = "You're looking at the results of wod #."
