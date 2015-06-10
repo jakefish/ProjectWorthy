@@ -5,7 +5,7 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'project_worthy.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-
+    url(r'home/', include('core.urls')),
     url(r'wod/', include('wod.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]
