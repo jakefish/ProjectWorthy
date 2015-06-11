@@ -1,2 +1,26 @@
 {% load staticfiles %}
-<link rel = "stylesheet" type="text/css" href="{% static "core/style.css" %}"/>
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<head>
+  <meta charset="utf-8">
+  <!-- Creating block tags so that the inheriting templates can over ride the title. -->
+  {% block title %}
+	 <title>Crossfit Worthy</title>
+  {% endblock %}
+    <link rel = "stylesheet" type="text/css" href="{% static "core/style.css" %}"/>
+	{% block extra-head %}
+	{% endblock %}
+</head>
+{% endblock %}
+<body>
+
+    <!-- Main Navigation Bar -->
+    {% block nav-bar %}
+    {% endblock %}
+
+
+
+
+</body>
+</html>
