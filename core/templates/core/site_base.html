@@ -17,10 +17,17 @@
 
     <!-- Main Navigation Bar -->
     {% block nav-bar %}
+    <nav id="mainNavigation">
+      {% block nav-links %}
+        <ul>
+            <li>Wods</li>
+            <li>About Us</li>
+            <li>What is Crossfit?</li>
+            <li>Testimonies</li>
+            <li>Sponsers</li>
+         </ul>
+         {% endblock %}
+    </nav>
     {% endblock %}
-
-
-
-
 </body>
 </html>
