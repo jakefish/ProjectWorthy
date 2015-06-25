@@ -14,20 +14,29 @@
 </head>
 {% endblock %}
 <body>
-
     <!-- Main Navigation Bar -->
     {% block nav-bar %}
     <nav id="mainNavigation">
       {% block nav-links %}
         <ul>
-            <li>Wods</li>
-            <li>About Us</li>
-            <li>What is Crossfit?</li>
-            <li>Testimonies</li>
-            <li>Sponsers</li>
+            <li>Home</li>
+            <li>
+              Meet the Coaches
+              <div>
+                  <ul>
+                        <li>Contact Us</li>
+                        <li>Location</li>
+                  </ul>
+              </div>
+            </li>
+            <li>Membership & Pricing</li>
+            <li>Wod Blog</li>
+            <li>Nutrition</li>
+            <li>Testimonals</li>
+            <li>Weekly News</li>
          </ul>
          {% endblock %}
     </nav>
-    {% endblock %}
+    {%  endblock %}
 </body>
 </html>
