@@ -16,25 +16,55 @@
 <body>
     <!-- Main Navigation Bar -->
     {% block nav-bar %}
-    <nav id="mainNavigation">
+    <nav>
       {% block nav-links %}
-        <ul>
-            <li>Home</li>
-            <li>
-              Meet the Coaches
-              <div>
-                  <ul>
-                        <li>Contact Us</li>
-                        <li>Location</li>
-                  </ul>
-              </div>
-            </li>
-            <li>Membership & Pricing</li>
-            <li>Wod Blog</li>
-            <li>Nutrition</li>
-            <li>Testimonals</li>
-            <li>Weekly News</li>
-         </ul>
+      	<ul>
+      		<li><a href="home.html">Home</a></li>
+      		<li>
+            <a href="">Meet The Coaches <span class="caret"></span></a>
+      			<div>
+        			<ul>
+        				<li>
+        					<a href="">Contact Us <span class="caret"></span></a>
+        				</li>
+        				<li>
+                  <a href="">Location <span class="caret"></span></a>
+                </li>
+        			</ul>
+      			</div>
+      		</li>
+      		<li>
+            <a href="">Membership & Pricing <span class="caret"></span></a>
+            <div>
+      				<ul>
+      					  <li>
+      						  <a href="">Get Started <span class="caret"></span></a>
+                  </li>
+        					<li>
+                    <a href="">Programs <span class="caret"></span></a>
+                  </li>
+                  <li>
+                    <a href="">Schedule <span class="caret"></span></a>
+                  </li>
+        				</ul>
+        			</div>
+          </li>
+      		<li>
+            <a href="">Wod Blog <span class="caret"></span></a>
+          </li>
+          <li>
+            <a href="">Nutrition <span class="caret"></span></a>
+            <div>
+              <ul>
+                <li>
+                  <a href="">Recipies <span class="caret"></span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="">Testimonials <span class="caret"></span></a></li>
+          <li><a href="">Weekly News <span class="caret"></span></a></li>
+      	</ul>
          {% endblock %}
     </nav>
     {%  endblock %}
