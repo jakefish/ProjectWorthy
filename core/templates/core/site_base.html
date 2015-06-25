@@ -19,7 +19,7 @@
     <nav>
       {% block nav-links %}
       	<ul>
-      		<li><a href="home.html">Home</a></li>
+      		<li><a href="/home/">Home</a></li>
       		<li>
             <a href="">Meet The Coaches <span class="caret"></span></a>
       			<div>
@@ -50,7 +50,7 @@
         			</div>
           </li>
       		<li>
-            <a href="">Wod Blog <span class="caret"></span></a>
+            <a href="/wod/">Wod Blog <span class="caret"></span></a>
           </li>
           <li>
             <a href="">Nutrition <span class="caret"></span></a>
@@ -67,6 +67,8 @@
       	</ul>
          {% endblock %}
     </nav>
-    {%  endblock %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
 </body>
 </html>

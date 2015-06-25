@@ -1,3 +1,5 @@
+{% extends "core/site_base.html" %}
+{% block content %}
 {% if latest_wod_list %}
   <ul>
     {% for wod in latest_wod_list %}
@@ -6,5 +8,5 @@
   </ul>
 {% else %}
   <p> No wods are available.</p>
-
 {% endif %}
+{% endblock %}

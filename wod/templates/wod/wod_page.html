@@ -1,10 +1,10 @@
-<p>Wod page</p>
+{% extends "core/site_base.html" %}
 {% block content %}
+<p>Wod page</p>
 {{ wod }}
 <p>{{wod.warm_up}}</p>
 {{wod.metcon}}
 {{wod.weightlifting}}
 {{wod.strength_accessory}}
 {{wod.date}}
-
 {% endblock %}
