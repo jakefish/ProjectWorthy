@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Wod
+from .models import Wod, WeightLifting
 
 
 class WodInline(admin.TabularInline):
@@ -21,4 +21,16 @@ class WodAdmin(admin.ModelAdmin):
 
     list_display = ('date',)
 
+class WeightLiftingAdmin(admin.ModelAdmin):
+
+    fieldsets = [
+        ('Movement',               {'fields': ['movement']}),
+        ('rep_scheme',                {'fields': ['rep_scheme']}),
+        ('description', {'fields': ['description']}),
+        ('date', {'fields':['date']}),
+    ]
+
+    list_display = ('date',)
+
 admin.site.register(Wod, WodAdmin)
+admin.site.register(WeightLifting, WeightLiftingAdmin)
