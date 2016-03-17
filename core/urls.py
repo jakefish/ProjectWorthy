@@ -6,5 +6,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.CoreView.as_view(), name='base_view'),
-    static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
+    #static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
 ]
