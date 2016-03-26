@@ -26,6 +26,7 @@ def wod_details(request, wod_id):
     return render(request, "wod/wod_page.html", {"wod": wod} )
 
 class LoginView(FormView):
+
     template_name = 'wod/login.html'
     form_class = AuthenticationForm
     success_url = '/home/'
@@ -50,6 +51,7 @@ class LoginView(FormView):
             return self.form_invalid(form)
 
 class RegisterView(FormView):
+
     template_name = 'wod/register.html'
     form_class = UserForm
     success_url = '/login/'

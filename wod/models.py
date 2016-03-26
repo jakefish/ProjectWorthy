@@ -6,7 +6,7 @@ from datetime import datetime
 class Wod(models.Model):
     warm_up = models.TextField()
     metcon = models.TextField()
-    weightlifting = models.OneToOneField('WeightLifting')
+    weightlifting = models.ManyToManyField('WeightLifting')
     strength_accessory = models.TextField()
     date = models.DateField(default=datetime.now, blank=True)
 
