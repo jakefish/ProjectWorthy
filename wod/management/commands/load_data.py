@@ -1,4 +1,5 @@
 import os
+import random
 import time
 from datetime import datetime
 
@@ -10,6 +11,7 @@ from wod.models import Wod, WeightLifting
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
+
         weightliftings = ['Clean', 'Snatch', 'Deadlift', 'High Hang Snatch',
                             'Hang Snatch', 'Power Clean', 'Back Squat',
                             'Front Squat', 'Clean and Jerk', 'Clean Deadlift',
@@ -26,14 +28,14 @@ class Command(BaseCommand):
                             'Front Squat',
                             ]
 
-        movement = ['Air Squat', 'Back Extensions', 'Box Jump', 'Burpee',
+        movements = ['Air Squat', 'Back Extensions', 'Box Jump', 'Burpee',
                     'Handstand Push Up', 'Jump Rope', 'Double Unders',
                     'Knees-to-Elbows', 'Lunge', 'Muscle-Up', 'Ring Dip',
                     'Pull-Up', 'Push-Up', 'Dips', 'Sit-Up', 'Rope Climb',
                     'Kettlebell Swing', 'Press', 'Thruster', 'Tire Flip',
                     'Prowler', 'Wall Ball', 'Running', 'Rowing']
 
-        rep_scheme = ['5X5', '3X3', 'EMOM', 'E2M', '21-15-9', '5/3/1', '10/5/5/5/10',
+        rep_schemes = ['5X5', '3X3', 'EMOM', 'E2M', '21-15-9', '5/3/1', '10/5/5/5/10',
                         '9/6/3/6/9', '3/6/9/12/15/', 'Max reps ', '1RM','3RM', '5RM',
                         '10RM', '15RM','30RM', '50RM','AHAP', 'AFAP','FOR TIME',
                          'TABATA','MAX ROUNDS IN 20 MINUTES', '3 ROUNDS','10 ROUNDS'
@@ -42,7 +44,7 @@ class Command(BaseCommand):
                          'STRENGTH BIAS','STRONGMAN', 'SWIMMING', 'TABATA','TIME CAP',
                          'TRIPLET']
 
-        description = [
+        descriptions = [
                         'Push hard', 'Do not give up', 'Burner',
                         'Lets see some PRs',
                         'Push yourself','This is a sprint',
@@ -65,7 +67,7 @@ class Command(BaseCommand):
                     'Kip Practice - 3m', 'Walk Walks','Drom', 'Bear Crawls'
                     ]
 
-        metcon = [
+        metcons = [
                     'Michael', 'Kelly', 'Fran', 'Karen', 'Cindy', 'Elizabeth',
                     'Dianne', 'Nancy', 'Annie', 'Chasing Annie', 'Sally',
                     'Filthy Fifty', 'Amanda', 'Angie', 'Barabara', 'Chelsea',
@@ -87,7 +89,7 @@ class Command(BaseCommand):
                     'Holleyman','Adrain', 'Glen', 'Tom', 'Moose'
                   ]
 
-        strength_accessory = [
+        strength_accessories = [
                                 'Kick Ups w/ hold', 'Wall Walk', 'HSW',
                                 'Parallete Kick Ups w/ hold',
                                 '*Arch/Hollow Swings (Kip); 3x20',
@@ -116,5 +118,23 @@ class Command(BaseCommand):
                                 '20 GHD sit up',
                                 'Z1 Row or Airdyne',
                                 'Pistols 31X1 to box at just below knee height',
-                                'Leg Less Rope Climb',                                
+                                'Leg Less Rope Climb',
                               ]
+
+        for x in range (0, 200):
+            WeightLifting.objects.create(movement=movements[random.randrange(
+                                        len(movements))],
+                                        rep_scheme=rep_schemes[random.randrange(
+                                        len(rep_schemes))],
+                                        description=descriptions[random.randrange(
+                                        len(descriptions))],
+                                        )
+
+
+        for x in range(0, 200):
+            Wod.objects.create(warm_up=warm_ups[random.randrange(len(
+                                warm_ups))],
+                                metcon=metcons[random.randrange(len(metcons))],
+                                weightlifting=WeightLifting.objects.all()[random.randrange(200)],
+                                strength_accessory=strength_accessories[random.randrange(len(strength_accessories))]
+                                )
