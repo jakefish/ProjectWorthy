@@ -135,6 +135,6 @@ class Command(BaseCommand):
             Wod.objects.create(warm_up=warm_ups[random.randrange(len(
                                 warm_ups))],
                                 metcon=metcons[random.randrange(len(metcons))],
-                                weightlifting=WeightLifting.objects.all()[random.randrange(200)],
+                                weightlifting=WeightLifting.objects.all()[x],
                                 strength_accessory=strength_accessories[random.randrange(len(strength_accessories))]
                                 )
