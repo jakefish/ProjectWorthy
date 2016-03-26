@@ -67,6 +67,23 @@
           </li>
           <li><a href="">Testimonials <span class="caret"></span></a></li>
           <li><a href="">Weekly News <span class="caret"></span></a></li>
+          <li id = "login-button">
+                       {% if not user.is_authenticated %}
+                         <a href='{% url "login" %}'>
+                           <button type="button" class="btn btn-default"id="sign-in-btn">Sign in</button>
+                       </a>
+                     </li>
+                     <li>
+                       <a href="{% url "register" %}">
+                         <button type="button" class="btn btn-primary">Register</button>
+                       </a>
+                     </li>
+                       {% else %}
+                         <a href='{% url "logout" %}'>
+                          <button type="button" class="btn btn-danger">Logout</button>
+                       </a>
+                     </li>
+                       {% endif %}
       	</ul>
          {% endblock %}
     </nav>
