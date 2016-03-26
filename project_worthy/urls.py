@@ -8,8 +8,10 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
     url(r'home/', include('core.urls')),
     url(r'wod/', include('wod.urls')),
+    url(r'^calendar/', include('happenings.urls', namespace='calendar')),
     url(r'^login/', LoginView.as_view(), name="login"),
     url(r'^register/', RegisterView.as_view(), name="register"),
     url(r'^logout/', LogoutView.as_view(), name="logout"),
     url(r'^admin/', include(admin.site.urls)),
+
 ]
