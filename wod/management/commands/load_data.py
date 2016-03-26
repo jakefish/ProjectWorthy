@@ -9,6 +9,15 @@ from wod.models import Wod, WeightLifting
 
 
 class Command(BaseCommand):
+    """Command for loading test data.
+
+    Overrides from django's BaseCommand class, this command takes no
+    arguments.
+
+    Generates random django objects based off of the weightliftings, movements,
+    rep_schemes, descriptoins, warm_ups, and metcon lists which will then be
+    used for test data for the wod app.
+    """
 
     def handle(self, *args, **options):
 
