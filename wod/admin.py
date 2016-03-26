@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Wod, WeightLifting
+from .models import Wod, WeightLifting, Athlete
 
 
 class WodInline(admin.TabularInline):
@@ -21,6 +21,7 @@ class WodAdmin(admin.ModelAdmin):
 
     list_display = ('date',)
 
+
 class WeightLiftingAdmin(admin.ModelAdmin):
 
     fieldsets = [
@@ -32,5 +33,19 @@ class WeightLiftingAdmin(admin.ModelAdmin):
 
     list_display = ('date',)
 
+
+class AthleteAdmin(admin.ModelAdmin):
+
+    fieldsets = [
+        ('Workouts Completed',               {'fields': ['workouts_completed']}),
+        ('Personal Records',                {'fields': ['personal_records']}),
+        ('Favorite Movement', {'fields': ['favorite_movement']}),
+        ('Athlete', {'fields':['athlete']}),
+    ]
+
+    list_display = ('athlete',)
+
+
 admin.site.register(Wod, WodAdmin)
 admin.site.register(WeightLifting, WeightLiftingAdmin)
+admin.site.register(Athlete, AthleteAdmin)
