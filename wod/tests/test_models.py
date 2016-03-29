@@ -18,10 +18,10 @@ from wod.models import Wod, WeightLifting, Athlete
 class TestModels(TestCase):
     """Test the creation and object database relationships
 
-    This class inherits from django's TestCase
-
-
+    This class inherits from django's TestCase sets up and creates a
+    temporary test database to run tests.
     """
+
     def setUp(self):
         """Set up the client."""
         self.c = Client()
@@ -36,6 +36,7 @@ class TestModels(TestCase):
         grp_obj.user_set.add(self.user)
 
     def test_wod_models(self):
+        """Test creation and relationship of Wod objects."""
         weightlifting = WeightLifting()
         weightlifting.movement = 'test'
         weightlifting.rep_scheme = 'test'
@@ -56,6 +57,7 @@ class TestModels(TestCase):
         self.assertFalse(isinstance(wod.weightlifting, WeightLifting))
 
     def test_weightlifting_model(self):
+        """Test creation and relationship of WeightLifting objects."""
         weightlifting = WeightLifting()
         weightlifting_pk = weightlifting.pk
         weightlifting.movement = 'movement'
@@ -69,6 +71,7 @@ class TestModels(TestCase):
         self.assertEqual(weightlifting.description, 'description')
 
     def test_athlete_model(self):
+        """Test relationship and creation of Athlete objects. """
         weightlifting = WeightLifting()
         weightlifting_pk = weightlifting.pk
         weightlifting.movement = 'movement'
@@ -84,4 +87,4 @@ class TestModels(TestCase):
         athlete.workouts_completed = 9
         athlete.personal_records = 101
         self.assertTrue(athlete.workouts_completed == 9)
-        self.assertTrue(athlete.personal_records == 101
+        self.assertTrue(athlete.personal_records == 101)
