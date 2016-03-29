@@ -89,7 +89,7 @@ class Athlete(models.Model):
     """
     workouts_completed = models.IntegerField(default=0)
     personal_records = models.IntegerField(default=0)
-    favorite_movement = models.OneToOneField('WeightLifting')
+    favorite_movement = models.OneToOneField('WeightLifting', null=True, blank=True)
     athlete = models.ForeignKey(User)
 
     def __unicode__(self):
