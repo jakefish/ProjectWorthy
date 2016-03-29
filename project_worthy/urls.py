@@ -6,7 +6,7 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'project_worthy.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'home/', include('core.urls')),
+    url(r'home/', include('core.urls'), name="home"),
     url(r'wod/', include('wod.urls')),
     url(r'^calendar/', include('happenings.urls', namespace='calendar')),
     url(r'^login/', LoginView.as_view(), name="login"),
