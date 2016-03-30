@@ -15,7 +15,10 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -40,6 +43,7 @@ INSTALLED_APPS = (
     'wod',
     'core',
     'happenings',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (

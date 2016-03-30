@@ -56,9 +56,23 @@ class TestModels(TestCase):
         self.assertContains(response, "Logout")
 
     def test_home_context(self):
+        response = self.c.get('/home/')
+        self.assertTrue(response.status_code == 200)
+        self.assertTrue("request" in response.context)
+        self.assertTrue("user" in response.context)
+        self.assertTrue("messages" in response.context)
+
+    def test_user_home_logout(self):
         self.c.logout()
         response = self.c.get('/home/')
         self.assertTrue(response.status_code == 200)
         self.assertContains(response, 'login')
         self.assertContains(response, 'register')
-        print response.content
+
+    def test_intruder(self):
+        self.c.logout()
+        response = self.c.get(reverse('wod_index'))
+        self.assertTrue(response.status_code == 302)
+        self.c.login(username='john', password='password')
+        response = self.c.get(reverse('wod_index'), follow=True)
+        self.assertTrue(response.status_code == 200)
