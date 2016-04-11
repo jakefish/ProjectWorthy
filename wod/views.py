@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
-from django.views.generic import FormView, RedirectView
+from django.views.generic import FormView, RedirectView, TemplateView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
@@ -232,3 +232,8 @@ class LogoutView(RedirectView):
     def get(self, request, *args, **kwargs):
         logout(self.request)
         return super(LogoutView, self).get(request, *args, **kwargs)
+        
+        
+class StopwatchView(TemplateView):
+
+    template_name = 'wod/stopwatch.html'

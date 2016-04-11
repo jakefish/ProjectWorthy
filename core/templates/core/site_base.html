@@ -8,6 +8,9 @@
   {% block title %}
 	 <title>Crossfit Worthy</title>
   {% endblock %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'wod/TimeCircles.js' %}"></script>
+    <link href="{% static 'wod/TimeCircles.css' %}" rel="stylesheet">    
     <link rel = "stylesheet" type="text/css" href="{% static "core/style.css" %}"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	{% block extra-head %}
@@ -21,7 +24,7 @@
       {% block nav-links %}
       	<ul>
           <div id="logo">
-            <img src="{% static "core/crossfitworthylogo.jpg" %}" alt="My image"/>
+            <img src="http://igo-fitness.com/wp-content/uploads/weightlifting-icon-170x170.png" alt="My image"/> 
           </div>
       		<li><a href="/home/">Home</a></li>
       		<li>
@@ -80,6 +83,11 @@
                        </a>
                      </li>
                        {% else %}
+                         <a href='{% url "stopwatch" %}'>
+                          <button type="button" class="btn btn-info">Stopwatch</button>
+                       </a>
+                     </li>
+                     <li>
                          <a href='{% url "logout" %}'>
                           <button type="button" class="btn btn-danger">Logout</button>
                        </a>
